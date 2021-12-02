@@ -1,5 +1,10 @@
-figure 1
+figure 2
 circle
-40 30
-30
-10 142 148
+40 30      // center
+30         // radius
+10 142 148 // color
+
+circle
+50 60      // center
+30         // radius
+20 130 200 // color
