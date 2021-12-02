@@ -4,7 +4,7 @@ circle
 30         // radius
 10 142 148 // color
 
-circle
-50 60      // center
-30         // radius
-20 130 200 // color
+line
+30 50
+90 120
+125 30 46

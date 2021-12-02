@@ -2,38 +2,42 @@ from ..drawer import Color
 from ..loader import FileLoadder
 
 
-class Scene:
+class Scene(FileLoadder):
+
     def __init__(self, shapes=None):
-        scene_new = FileLoadder.load_scene(self)
+        self.form = None
+        self.scene_new = FileLoadder.load_scene(self)
         self.shapes = shapes or []
-        self.num_fig = int(scene_new[1])
-        indexes = []
-        for i in range(len(scene_new)):
-            if scene_new[i] == '':
-                indexes.append(i)
+        self.num_fig = int(self.scene_new[1])
+        self.indexes = []
+        for i in range(len(self.scene_new)):
+            if self.scene_new[i] == '':
+                self.indexes.append(i)
         else:
-            indexes.append(len(scene_new))
+            self.indexes.append(len(self.scene_new))
+        figures = {}
         for i in range(self.num_fig):
-            figure = scene_new[indexes[i] + 1: indexes[i + 1]]
-            print(figure)
-            self.form = figure[0].title()
-            if figure[0] == "circle":
-                self.x = int(figure[1])
-                self.y = int(figure[2])
-                self.radius = int(figure[3])
-                self.color = Color(int(figure[4]), int(figure[5]), int(figure[6]))
-            if figure[0] == "square":
-                self.x = int(figure[1])
-                self.y = int(figure[2])
-                self.width = int(figure[3])
-                self.height = int(figure[4])
-                self.color = Color(int(figure[5]), int(figure[6]), int(figure[6]))
-            if figure[0] == "line":
-                self.x0 = int(figure[1])
-                self.y0 = int(figure[2])
-                self.x1 = int(figure[3])
-                self.y1 = int(figure[4])
-                self.color = Color(int(figure[5]), int(figure[6]), int(figure[7]))
+            self.figure_i = self.scene_new[self.indexes[i] + 2: self.indexes[i + 1]]
+            self.form = self.scene_new[self.indexes[i] + 1]
+            figures[self.form] = self.figure_i
+            print(figures.items())
+            if self.figure_i[0] == "circle":
+                self.x = int(self.figure_i[1])
+                self.y = int(self.figure_i[2])
+                self.radius = int(self.figure_i[3])
+                self.color = Color(int(self.figure_i[4]), int(self.figure_i[5]), int(self.figure_i[6]))
+            if self.figure_i[0] == "square":
+                self.x = int(self.figure_i[1])
+                self.y = int(self.figure_i[2])
+                self.width = int(self.figure_i[3])
+                self.height = int(self.figure_i[4])
+                self.color = Color(int(self.figure_i[5]), int(self.figure_i[6]), int(self.figure_i[6]))
+            if self.figure_i[0] == "line":
+                self.x0 = int(self.figure_i[1])
+                self.y0 = int(self.figure_i[2])
+                self.x1 = int(self.figure_i[3])
+                self.y1 = int(self.figure_i[4])
+                self.color = Color(int(self.figure_i[5]), int(self.figure_i[6]), int(self.figure_i[7]))
 
     def add(self, new_shape):
         self.shapes.append(new_shape)

@@ -1,8 +1,9 @@
 from .shape import Shape
 from ..drawer import Color
+from ..scene import Scene
 
 
-class Circle(Shape):
+class Circle(Shape, Scene):
     line_counter = 0
 
     def __init__(self, x, y, radius, drawer, color=None):
