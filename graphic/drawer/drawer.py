@@ -33,4 +33,5 @@ class Drawer:
     def save(self):
         with open('gradient.png', 'wb') as f:
             w = png.Writer(self.w, self.h, greyscale=False)
+            print(type(self.__buffer))
             w.write(f, self.__buffer)
