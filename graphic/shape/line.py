@@ -1,3 +1,4 @@
+from . import Point2D
 from .shape import Shape
 from ..drawer import Color
 
@@ -8,6 +9,7 @@ class Line(Shape):
     def __init__(self, start, end, drawer, color=None):
         Shape.__init__(self, drawer)
         self.start = start
+        print(f'self.start={self.start}')
         self.end = end
         self.line_counter += 1
         self.color = color or Color(255, 255, 255)

@@ -15,12 +15,10 @@ class Scene(FileLoadder):
                 self.indexes.append(i)
         else:
             self.indexes.append(len(self.scene_new))
-        figures = {}
         for i in range(self.num_fig):
-            self.figure_i = self.scene_new[self.indexes[i] + 2: self.indexes[i + 1]]
+            self.figure_i = self.scene_new[self.indexes[i] + 1: self.indexes[i + 1]]
             self.form = self.scene_new[self.indexes[i] + 1]
-            figures[self.form] = self.figure_i
-            print(figures.items())
+            print(self.figure_i)
             if self.figure_i[0] == "circle":
                 self.x = int(self.figure_i[1])
                 self.y = int(self.figure_i[2])
