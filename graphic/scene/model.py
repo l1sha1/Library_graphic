@@ -17,7 +17,6 @@ class Scene(FileLoadder):
             self.indexes.append(len(self.scene_new))
         self.figures = []
         for i in range(self.num_fig):
-            print(i)
             self.figure_i = self.scene_new[self.indexes[i] + 1: self.indexes[i + 1]]
             self.form = self.scene_new[self.indexes[i] + 1]
             if self.figure_i[0] == "circle":

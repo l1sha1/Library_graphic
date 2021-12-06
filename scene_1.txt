@@ -15,14 +15,14 @@ square
 20 219 200 // color
 
 circle
-128 128    // x y
+70 70   // x y
 50       // w h
 210 25 228 // color
 
 square
-10 20   // x y
+10 15   // x y
 78 100    // w h
-142 217 51 // color
+142 200 51 // color
 
 line
 0 128

@@ -1,3 +1,5 @@
+import sys
+
 from .shape import Shape
 from ..drawer import Color
 from ..scene import Scene
@@ -20,6 +22,9 @@ class Circle(Shape, Scene):
     def draw(self):
         disp_x = self.x
         disp_y = self.y - self.radius
+        if disp_y - self.radius < 0 or disp_x - self.radius < 0:
+            print("Круг выходит за границы поля")
+            sys.exit()
         x = 0
         y = self.radius
         delta = (1 - 2 * self.radius)
