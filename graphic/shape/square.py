@@ -1,5 +1,5 @@
 from graphic.drawer import Color
-from graphic.shape import Shape, Point2D, Line, line
+from graphic.shape import Shape, Point2D, Line
 
 
 class Square(Line):

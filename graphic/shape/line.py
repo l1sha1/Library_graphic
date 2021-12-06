@@ -41,20 +41,18 @@ class Line(Shape):
                 else:
                     d = d + 2 * dy
         elif dx == 0:
-            x = self.start.x - 1
-            for y in range(self.start.y + 1, self.end.y + 1):
+            x = self.start.x
+            for y in range(self.start.y, self.end.y + 1):
                 self.drawer.put_pixel(x, y, self.color)
                 if d > 0:
-                    x = x + xi
                     d = d + (2 * (dx - dy))
                 else:
                     d = d + 2 * dx
         elif dy == 0:
-            y = self.start.y + 1
+            y = self.start.y
             for x in range(self.start.x, self.end.x + 1):
                 self.drawer.put_pixel(x, y, self.color)
                 if d > 0:
-                    y = y + yi
                     d = d + (2 * (dy - dx))
                 else:
                     d = d + 2 * dy
