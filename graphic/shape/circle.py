@@ -19,7 +19,7 @@ class Circle(Shape, Scene):
 
     def draw(self):
         disp_x = self.x
-        disp_y = self.y
+        disp_y = self.y - self.radius
         x = 0
         y = self.radius
         delta = (1 - 2 * self.radius)

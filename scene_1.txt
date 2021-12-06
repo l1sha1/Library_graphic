@@ -1,5 +1,35 @@
-figure 1
-square
-10 10    // x y
-107 104       // w h
+figure 7
+circle
+50 50    // x y
+40       // w h
 155 155 155 // color
+
+line
+50 50
+128 128
+120 70 10
+
+square
+90 100   // x y
+50 30     // w h
+20 219 200 // color
+
+circle
+128 128    // x y
+50       // w h
+210 25 228 // color
+
+square
+10 20   // x y
+78 100    // w h
+142 217 51 // color
+
+line
+0 128
+255 128
+155 155 155
+
+line
+128 0
+128 255
+155 155 155
